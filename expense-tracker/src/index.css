@@ -1,5 +1,6 @@
-.body {
+body {
   font-family: 'Times New Roman', Times, serif;
+  margin: 0px;
 }
 
 .header-container {
@@ -18,4 +19,24 @@
 
 .header-title {
   color: white;
+}
+
+.total-balance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+}
+
+.balance-title {
+  margin-bottom: 5px;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.balance-number {
+  color: rgb(45, 203, 45);
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: 25px;
 }
