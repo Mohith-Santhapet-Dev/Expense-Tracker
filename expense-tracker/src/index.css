@@ -43,7 +43,8 @@ body {
 
 .money-details-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 80px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -51,8 +52,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px;
-  margin-right: 400px;
-  margin-left: 400px;
   align-items: center;
 }
 
@@ -65,10 +64,29 @@ body {
   font-size: 40px;
 }
 
+.money-container.income {
+  margin-left: 300px;
+}
+
+.money-container.expense {
+  margin-right: 300px;
+}
+
 .money-container.income .money-info-number {
   color: rgb(45, 203, 45);
 }
 
 .money-container.expense .money-info-number {
   color: rgb(252, 0, 0);
+}
+
+.add-entry-button {
+  height: 40px;
+  width: 120px;
+  align-self: center;
+  background-color: rgb(81, 81, 216);
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+  font-size: 15px;
 }

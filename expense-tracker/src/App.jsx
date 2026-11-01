@@ -2,15 +2,16 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const totalBalance = 0
-  const income = 0
-  const expense = 0
+  const income = 100
+  const expense = 30
+  let totalBalance = income - expense
   return (
   <>
     <Header/>
     <TotalBalance number = {totalBalance}/>
     <div class = "money-details-container">
       <MoneyInfo title = "Income" number = {income} type = "income"/>
+      <button className = "add-entry-button">Add Entry</button>
       <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
   </>)
