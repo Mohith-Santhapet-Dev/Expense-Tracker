@@ -3,10 +3,16 @@ import './App.css'
 
 function App() {
   const totalBalance = 0
+  const income = 0
+  const expense = 0
   return (
   <>
     <Header/>
     <TotalBalance number = {totalBalance}/>
+    <div class = "money-details-container">
+      <MoneyInfo title = "Income" number = {income}/>
+      <MoneyInfo title = "Expense" number = {expense}/>
+    </div>
   </>)
   
 }
@@ -26,6 +32,16 @@ function TotalBalance(props) {
       <h3 className = "balance-title">Total Balance</h3>
       <h2 className = "balance-number">${props.number}</h2>
     </div>
+  )
+}
+
+function MoneyInfo(props) {
+  return (
+    <div>
+      <h3>{props.title}</h3>
+      <h2>{props.number}</h2>
+    </div>
+
   )
 }
 
