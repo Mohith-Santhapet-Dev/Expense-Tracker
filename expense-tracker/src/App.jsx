@@ -1,19 +1,27 @@
 import { useState } from 'react'
 import './App.css'
+import Form from "./Form.jsx"
 
 function App() {
   const income = 100
   const expense = 30
   let totalBalance = income - expense
+
+  const [isFormOpen, setIsFormOpen] = useState(false)
+  const handleEntryButton = () => {
+    setIsFormOpen(true)
+  }
+
   return (
   <>
     <Header/>
     <TotalBalance number = {totalBalance}/>
-    <div class = "money-details-container">
+    <div className = "money-details-container">
       <MoneyInfo title = "Income" number = {income} type = "income"/>
-      <button className = "add-entry-button">Add Entry</button>
+      <button className = "add-entry-button" onClick = {() => handleEntryButton()}>Add Entry</button>
       <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
+    {isFormOpen && <Form/>}
   </>)
   
 }

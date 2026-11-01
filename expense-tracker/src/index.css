@@ -90,3 +90,55 @@ body {
   border-radius: 20px;
   font-size: 15px;
 }
+
+.form {
+  display:flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+
+.form-section {
+  display:flex;
+  flex-direction: column;
+  width: 50%;
+  align-self: center;
+}
+
+.form-subheading {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  height: 30px;
+  border-style: solid;
+  border-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.submit-button {
+  height: 40px;
+  width: 120px;
+  background-color: rgb(81, 81, 216);
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+  font-size: 15px;
+  margin-top: 25px;
+ 
+}
+
+.type-dropdown {
+  height: 30px;
+  width: 150px;
+  border-style: solid;
+  border-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+}
