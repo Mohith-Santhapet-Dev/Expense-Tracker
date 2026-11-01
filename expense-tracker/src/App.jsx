@@ -10,8 +10,8 @@ function App() {
     <Header/>
     <TotalBalance number = {totalBalance}/>
     <div class = "money-details-container">
-      <MoneyInfo title = "Income" number = {income}/>
-      <MoneyInfo title = "Expense" number = {expense}/>
+      <MoneyInfo title = "Income" number = {income} type = "income"/>
+      <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
   </>)
   
@@ -37,9 +37,9 @@ function TotalBalance(props) {
 
 function MoneyInfo(props) {
   return (
-    <div>
-      <h3>{props.title}</h3>
-      <h2>{props.number}</h2>
+    <div className = {`money-container ${props.type}`}>
+      <h3 className = "money-info-title">{props.title}</h3>
+      <h2 className = "money-info-number">${props.number}</h2>
     </div>
 
   )

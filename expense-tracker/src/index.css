@@ -40,3 +40,35 @@ body {
   margin: 0;
   margin-bottom: 25px;
 }
+
+.money-details-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.money-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-right: 400px;
+  margin-left: 400px;
+  align-items: center;
+}
+
+.money-info-title {
+  font-size: 20px;
+}
+
+.money-info-number {
+  margin-top: 5px;
+  font-size: 40px;
+}
+
+.money-container.income .money-info-number {
+  color: rgb(45, 203, 45);
+}
+
+.money-container.expense .money-info-number {
+  color: rgb(252, 0, 0);
+}
