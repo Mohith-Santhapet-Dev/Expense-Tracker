@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import './App.css'
 import Form from "./Form.jsx"
 import Entry from "./Entry.jsx"
@@ -11,11 +11,12 @@ function App() {
   const [entries, setEntries] = useState([])
   const entryObject = {
     description: "",
-    amount: 0
+    amount: 0,
+    type: ""
   }
 
-  const income = 100
-  const expense = 30
+  const [income, setIncome] = useState(0)
+  let [expense, setExpense] = useState(0)
   let totalBalance = income - expense
 
   const [isFormOpen, setIsFormOpen] = useState(false)
@@ -27,10 +28,25 @@ function App() {
     e.preventDefault()
     const entryDescription = document.querySelector(".form-input.description").value
     const entryAmount = document.querySelector(".form-input.amount").value
+    const entryType = document.querySelector(".type-dropdown").value
     entryObject.description = entryDescription
     entryObject.amount = entryAmount
+    entryObject.expense = entryType
+
+    if(entryType === "Income") {
+      entryObject.type = "income"
+      setIncome(income + entryAmount)
+    }
+    else {
+      entryObject.type = "expense"
+      setExpense(expense + entryAmount)
+    }
+
+      
     setEntries([...entries, entryObject])
+    console.log(entryObject.type)
     setIsFormOpen(false)
+    
   }
 
   return (
@@ -38,12 +54,12 @@ function App() {
     <Header/>
     <TotalBalance number = {totalBalance}/>
     <div className = "money-details-container">
-      <MoneyInfo title = "Income" number = {income} type = "income"/>
+      <MoneyInfo title = "Income" number = {Number(income)} type = "income"/>
       <button className = "add-entry-button" onClick = {() => handleEntryButton()}>Add Entry</button>
-      <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
+      <MoneyInfo title = "Expense" number = {Number(expense)} type = "expense"/>
     </div>
     {entries.map((entry) => {
-      return <Entry description = {entry.description} amount = {entry.amount} type = "expense"/>
+      return <Entry description = {entry.description} amount = {entry.amount} type = {entry.type.toLowerCase()}/>
     })}
     {isFormOpen && <Form handleSubmitButton = {(e) => handleSubmitButton(e)}/>}
   </>)
