@@ -1,0 +1,21 @@
+.body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.header-container {
+  background-color: rgb(81, 81, 216);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header-img {
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+}
+
+.header-title {
+  color: white;
+}
