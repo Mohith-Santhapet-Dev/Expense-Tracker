@@ -3,7 +3,17 @@ import './App.css'
 import Form from "./Form.jsx"
 import Entry from "./Entry.jsx"
 
+
+
+
 function App() {
+
+  const [entries, setEntries] = useState([])
+  const entryObject = {
+    description: "",
+    amount: 0
+  }
+
   const income = 100
   const expense = 30
   let totalBalance = income - expense
@@ -11,6 +21,16 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const handleEntryButton = () => {
     setIsFormOpen(true)
+  }
+
+  function handleSubmitButton(e) {
+    e.preventDefault()
+    const entryDescription = document.querySelector(".form-input.description").value
+    const entryAmount = document.querySelector(".form-input.amount").value
+    entryObject.description = entryDescription
+    entryObject.amount = entryAmount
+    setEntries([...entries, entryObject])
+    setIsFormOpen(false)
   }
 
   return (
@@ -22,9 +42,10 @@ function App() {
       <button className = "add-entry-button" onClick = {() => handleEntryButton()}>Add Entry</button>
       <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
-    <Entry description = "Groceries" amount = {100} type = "expense"/> 
-    <Entry description = "Groceries" amount = {100} type = "income"/> 
-    {isFormOpen && <Form setIsFormOpen = {setIsFormOpen}/>}
+    {entries.map((entry) => {
+      return <Entry description = {entry.description} amount = {entry.amount} type = "expense"/>
+    })}
+    {isFormOpen && <Form handleSubmitButton = {(e) => handleSubmitButton(e)}/>}
   </>)
   
 }
@@ -56,5 +77,6 @@ function MoneyInfo(props) {
 
   )
 }
+
 
 export default App
