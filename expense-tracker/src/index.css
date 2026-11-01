@@ -142,3 +142,17 @@ body {
   font-size: 15px;
   padding: 5px;
 }
+
+.entry-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.entry-container.income .entry-description {
+  color: rgb(45, 203, 45);
+}
+
+.entry-container.expense .entry-description {
+  color: rgb(252, 0, 0);
+}

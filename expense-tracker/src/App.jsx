@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Form from "./Form.jsx"
+import Entry from "./Entry.jsx"
 
 function App() {
   const income = 100
@@ -21,6 +22,8 @@ function App() {
       <button className = "add-entry-button" onClick = {() => handleEntryButton()}>Add Entry</button>
       <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
+    <Entry description = "Groceries" amount = {100} type = "expense"/> 
+    <Entry description = "Groceries" amount = {100} type = "income"/> 
     {isFormOpen && <Form setIsFormOpen = {setIsFormOpen}/>}
   </>)
   
