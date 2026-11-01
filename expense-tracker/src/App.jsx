@@ -21,7 +21,7 @@ function App() {
       <button className = "add-entry-button" onClick = {() => handleEntryButton()}>Add Entry</button>
       <MoneyInfo title = "Expense" number = {expense} type = "expense"/>
     </div>
-    {isFormOpen && <Form/>}
+    {isFormOpen && <Form setIsFormOpen = {setIsFormOpen}/>}
   </>)
   
 }

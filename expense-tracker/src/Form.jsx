@@ -1,7 +1,13 @@
 
-function Form() {
+function Form(props) {
+
+    const handleSubmitButton = (e) => {
+        e.preventDefault()
+        props.setIsFormOpen(false)
+    }
+
     return (
-        <form className = "form">
+        <form className = "form" onSubmit={(e) => handleSubmitButton(e)}>
             <div className = "form-section">
                 <h5 className = "form-subheading">Description</h5>
                 <input placeholder="write a description" className = "form-input"/>
@@ -17,7 +23,7 @@ function Form() {
                     <option>Income</option>
                 </select>
             </div>
-            <button className = "submit-button">Submit</button>
+            <button type = "submit"className = "submit-button">Submit</button>
         </form>
     )
 }
